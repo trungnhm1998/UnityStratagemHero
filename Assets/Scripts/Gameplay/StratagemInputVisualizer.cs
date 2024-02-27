@@ -1,37 +1,33 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using DG.Tweening;
+using UnityEngine;
 
 namespace StratagemHero.Gameplay
 {
-    [RequireComponent(typeof(StratagemVisualizer))]
+    [RequireComponent(typeof(StratagemCodeVisualizer))]
     public class StratagemInputVisualizer : MonoBehaviour
     {
+        [SerializeField] private Color _correctInputColor = Color.yellow;
+        [SerializeField] private float _tweenTime = 0.2f;
+
         private StratagemMonoBehaviour _behaviour;
         private IModel _model;
-        private StratagemVisualizer _visualizer;
+        private StratagemCodeVisualizer _codeVisualizer;
 
         private void Awake()
         {
             _behaviour = GetComponent<StratagemMonoBehaviour>();
             _model = GetComponent<IModel>();
-            _visualizer = GetComponent<StratagemVisualizer>();
+            _codeVisualizer = GetComponent<StratagemCodeVisualizer>();
         }
 
-        private void OnEnable()
-        {
-            _behaviour.NextInput += HighlightDirectionIndex;
-        }
+        private void OnEnable() => _behaviour.NextInput += HighlightDirectionIndex;
 
-        private void OnDisable()
-        {
-            _behaviour.NextInput -= HighlightDirectionIndex;
-        }
+        private void OnDisable() => _behaviour.NextInput -= HighlightDirectionIndex;
 
         private void HighlightDirectionIndex()
         {
-            var arrowGo = _visualizer.Arrows[_model.CodeIndex - 1];
-            var image = arrowGo.GetComponent<Image>();
-            image.color = Color.yellow;
+            _codeVisualizer.Arrows[_model.CodeIndex]
+                .DOColor(_correctInputColor, _tweenTime);
         }
     }
 }

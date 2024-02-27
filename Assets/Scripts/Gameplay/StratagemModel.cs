@@ -30,10 +30,7 @@ namespace StratagemHero.Gameplay
 
                 var arrowNumbers = _code.Split(",");
                 var code = new EDirection[arrowNumbers.Length];
-                for (var i = 0; i < arrowNumbers.Length; i++)
-                {
-                    code[i] = (EDirection)int.Parse(arrowNumbers[i]);
-                }
+                for (var i = 0; i < arrowNumbers.Length; i++) code[i] = (EDirection)int.Parse(arrowNumbers[i]);
 
                 _cacheCode = code;
                 return code;

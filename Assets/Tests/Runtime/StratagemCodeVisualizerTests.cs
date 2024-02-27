@@ -3,7 +3,7 @@
 namespace Tests.Runtime
 {
     [TestFixture]
-    public class StratagemVisualizerTests
+    public class StratagemCodeVisualizerTests
     {
     }
 }

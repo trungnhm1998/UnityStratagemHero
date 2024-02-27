@@ -4,19 +4,25 @@ using UnityEngine;
 
 namespace StratagemHero.Gameplay
 {
+    /// <summary>
+    /// Act as presenter
+    /// </summary>
     public class StratagemMonoBehaviour : MonoBehaviour
     {
         public event Action Activated;
         public event Action ActivateFailed;
         public event Action NextInput;
+        public event Action ResetEvent;
 
         public void Input(EDirection direction) => _behaviour.Input(direction);
 
         private StratagemBehaviour _behaviour;
+        private IModel _model; // act as state
 
         private void Awake()
         {
-            _behaviour = new StratagemBehaviour(GetComponent<IModel>());
+            _model = GetComponent<IModel>();
+            _behaviour = new StratagemBehaviour(_model);
             _behaviour.ActivateFailed += OnActivateFailed;
             _behaviour.Activated += OnActivated;
             _behaviour.NextInput += OnNextInput;
@@ -42,6 +48,14 @@ namespace StratagemHero.Gameplay
             _behaviour.ActivateFailed -= OnActivateFailed;
             _behaviour.Activated -= OnActivated;
             _behaviour.NextInput -= OnNextInput;
+        }
+
+        public void Reset() => OnReset();
+
+        private void OnReset()
+        {
+            ResetEvent?.Invoke();
+            _model.CodeIndex = 0;
         }
     }
 }

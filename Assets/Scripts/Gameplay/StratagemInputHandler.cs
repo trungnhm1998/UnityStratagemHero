@@ -35,9 +35,8 @@ namespace StratagemHero.Gameplay
         private void UnblockInput()
         {
             _blockInput = false;
-            // TODO: Reset visualizer and model
+            _behaviour.Reset();
         }
-
 
         private void ConvertThenValidate(Vector2 axis)
         {

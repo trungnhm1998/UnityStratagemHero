@@ -7,7 +7,7 @@ namespace StratagemHero.Gameplay
     {
         public event Action Activated;
         public event Action ActivateFailed;
-        public event Action NextInput;
+        public event Action NextInput; // right before inc index
         private readonly IModel _model;
         public StratagemBehaviour(IModel model) => _model = model;
 
@@ -29,8 +29,8 @@ namespace StratagemHero.Gameplay
                 return;
             }
 
-            CodeIndex++;
             NextInput?.Invoke();
+            CodeIndex++;
 
             if (CodeIndex < Code.Length) return;
 

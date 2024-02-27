@@ -27,7 +27,7 @@ namespace StratagemHero.Input
 
             _inputActions = new InputActions();
             _inputActions.UI.SetCallbacks(this);
-            
+
             _inputActions.UI.Enable();
         }
 
@@ -48,7 +48,10 @@ namespace StratagemHero.Input
 
         public void OnSubmit(InputAction.CallbackContext context) { }
 
-        public void OnCancel(InputAction.CallbackContext context) { }
+        public void OnCancel(InputAction.CallbackContext context)
+        {
+            if (context.performed) CancelEvent?.Invoke();
+        }
 
         public void OnPoint(InputAction.CallbackContext context) { }
 
