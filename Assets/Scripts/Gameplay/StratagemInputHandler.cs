@@ -16,7 +16,7 @@ namespace StratagemHero.Gameplay
 
         private void OnEnable()
         {
-            _inputMediator.DirectionInput += ConvertThenValidate;
+             _inputMediator.DirectionInput += ConvertThenValidate;
             _inputMediator.CancelEvent += UnblockInput;
             _behaviour.ActivateFailed += BlockInput;
         }
