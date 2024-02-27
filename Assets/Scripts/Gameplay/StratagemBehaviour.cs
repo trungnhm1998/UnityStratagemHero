@@ -9,7 +9,6 @@ namespace StratagemHero.Gameplay
         public event Action ActivateFailed;
         public event Action NextInput;
         private readonly IModel _model;
-
         public StratagemBehaviour(IModel model) => _model = model;
 
         private EDirection[] Code => _model.Code;
@@ -22,15 +21,19 @@ namespace StratagemHero.Gameplay
 
         public void Input(EDirection direction)
         {
-            if (Code[CodeIndex++] != direction)
+            if (direction == EDirection.Invalid) return;
+            if (Code[CodeIndex] != direction)
             {
                 ActivateFailed?.Invoke();
                 CodeIndex = 0;
                 return;
             }
 
+            CodeIndex++;
             NextInput?.Invoke();
-            if (CodeIndex < Code.Length - 1) return;
+
+            if (CodeIndex < Code.Length) return;
+
             Activated?.Invoke();
             CodeIndex = 0;
         }

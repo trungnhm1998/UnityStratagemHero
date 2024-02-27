@@ -12,10 +12,11 @@ namespace StratagemHero.Gameplay
 
         private EDirection[] _code = Array.Empty<EDirection>();
         private GameObject[] _arrows = Array.Empty<GameObject>();
+        public GameObject[] Arrows => _arrows;
 
         private void Start()
         {
-            _code = GetComponent<IStratagemCodeProvider>().GetCode();
+            _code = GetComponent<IModel>().Code;
             _arrows = new GameObject[_code.Length];
 
             for (var i = 0; i < _code.Length; i++)

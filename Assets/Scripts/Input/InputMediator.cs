@@ -8,6 +8,7 @@ namespace StratagemHero.Input
         InputActions.IUIActions
     {
         public event Action<Vector2> DirectionInput;
+        public event Action CancelEvent;
 
         private InputActions _inputActions;
 

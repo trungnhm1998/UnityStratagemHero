@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6570043956678795969}
   - component: {fileID: 5360385685213327328}
   - component: {fileID: 7081432852126721931}
+  - component: {fileID: 3426756010512819069}
+  - component: {fileID: 8881262414157327444}
   m_Layer: 5
   m_Name: Stratagem
   m_TagString: Untagged
@@ -77,6 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c1ed91f49a4d708a1e00251328e8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inputMediator: {fileID: 11400000, guid: f39d6eea757d40b4691fab14e6f03340, type: 2}
+  _behaviour: {fileID: 3426756010512819069}
 --- !u!114 &5360385685213327328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,3 +107,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _arrowPrefab: {fileID: 230058864582344063, guid: 31b599c0385e70747803c2a276937f68, type: 3}
+--- !u!114 &3426756010512819069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773120171935283807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbe756fef66b4948801f3528ed9fdf88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8881262414157327444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773120171935283807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83dd337020d54e3c9e57a5daab6832da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

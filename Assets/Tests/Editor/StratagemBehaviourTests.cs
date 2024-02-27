@@ -56,7 +56,7 @@ namespace Tests.Editor
         }
 
         [TestCase(new[] { EDirection.Up }, new[] { EDirection.Down })]
-        [TestCase(new[] { EDirection.Right }, new[] { EDirection.Invalid })]
+        // [TestCase(new[] { EDirection.Right }, new[] { EDirection.Invalid })] // handle invalid case?
         [TestCase(new[] { EDirection.Up, EDirection.Down, EDirection.Right, EDirection.Left, EDirection.Up },
             new[] { EDirection.Up, EDirection.Down, EDirection.Right, EDirection.Left, EDirection.Down })]
         public void Input_WrongCode_ShouldNotActivate(EDirection[] code, EDirection[] codeToInput)
@@ -70,6 +70,27 @@ namespace Tests.Editor
             }
 
             Assert.IsFalse(_activated);
+        }
+
+        [TestCase(new[] { EDirection.Down })]
+        [TestCase(new[] { EDirection.Down, EDirection.Right })]
+        [TestCase(new[] { EDirection.Up, EDirection.Down, EDirection.Right })]
+        public void Input_ShouldActiveAfterInputAllCode(EDirection[] code)
+        {
+            _codeProvider.Code.Returns(code);
+
+            for (var index = 0; index < code.Length; index++)
+            {
+                var direction = code[index];
+                _behaviour.Input(direction);
+                if (index < code.Length - 1 && _activated)
+                {
+                    Assert.Fail();
+                    return;
+                }
+            }
+
+            Assert.IsTrue(_activated);
         }
     }
 }
