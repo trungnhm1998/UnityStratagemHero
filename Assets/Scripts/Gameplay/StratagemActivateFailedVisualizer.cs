@@ -34,7 +34,7 @@ namespace StratagemHero.Gameplay
                 arrow
                     .DOColor(_errorColor, _tweenTime)
                     .From(Color.white)
-                    .SetLoops(2, LoopType.Yoyo)
+                    .SetLoops(4, LoopType.Yoyo)
                     .SetEase(Ease.InOutFlash);
 
                 index++;

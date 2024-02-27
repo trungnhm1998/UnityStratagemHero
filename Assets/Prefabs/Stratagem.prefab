@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 7081432852126721931}
   - component: {fileID: 3426756010512819069}
   - component: {fileID: 8881262414157327444}
+  - component: {fileID: -8881368469426360880}
+  - component: {fileID: -8471865334103262398}
+  - component: {fileID: -4100621519809493781}
   m_Layer: 5
   m_Name: Stratagem
   m_TagString: Untagged
@@ -56,12 +59,12 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 0
+    m_Top: 3
     m_Bottom: 0
-  m_ChildAlignment: 3
-  m_Spacing: 0
+  m_ChildAlignment: 1
+  m_Spacing: -4
   m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -129,5 +132,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 83dd337020d54e3c9e57a5daab6832da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _correctInputColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  _tweenTime: 0.2
+--- !u!114 &-8881368469426360880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773120171935283807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ede297cbefd4037bcca67bda35b5bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _errorColor: {r: 1, g: 0, b: 0, a: 1}
+  _tweenTime: 0.2
+--- !u!114 &-8471865334103262398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773120171935283807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5b7bb4b6014b6cb3d80f1b6db4c67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _activatedColor: {r: 0, g: 1, b: 0, a: 1}
+  _tweenTime: 0.2
+--- !u!114 &-4100621519809493781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3773120171935283807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fd6e78a98be40b684bed2025f12c453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
